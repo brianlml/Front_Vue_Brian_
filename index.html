@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+	<title>Document</title>
+</head>
+
+<body>
+	<div id="app">
+		<h1 v-if="condicion">{{mensaje}}</h1>
+			<!--<pre>{{$data}}</pre>-->
+		<h1>v-for</h1>
+		<ul>
+			<li v-for="(dia,index) of  dias">
+				<h3 v-if="index%2!=0">{{index}}-----{{dia}}</h3>
+			</li>
+		
+		</ul>
+		<div>
+			<h1>ejercicios con objetos</h1>
+			<ul>
+				<li v-for="datos of persona">
+					{{datos}}
+				</li>
+			</ul>
+			<h1>evento Onclick: {{contador}}</h1>
+			<button v-on:click="contador++">Incrementar!</button>
+			<button @click="contador--">Decrementar!</button>
+		</div>
+		<div>
+			<h1>ejercicio arreglo de objetos</h1>
+			<ul>
+			<li v-for="a of arreglo">{{a.text}}</li>
+			
+			</ul>
+		</div>
+		<div>
+			<h3>filtrar x el estado</h3>
+			<ul>
+				<li v-for="(p, index) of personas" v-if="p.estado == true">{{index}}--{{p.nombre}}
+				
+				</li>
+				
+			</ul>
+		</div>
+	
+	
+	
+	
+	</div>
+	<script src="vue.js"></script>
+
+</body>
+
+</html>
