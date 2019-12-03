@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <div class="prueba"><h1>Directiva v-bind:</h1></div>
+        
+        <div class="prueba2"><img v-bind:src="hola"></div>  
+
+        <div class="prueba"><a  v-bind:href="hola2">Ir Google!</a></div>
+        <div class="titulo">
+            <h1>IMAGENES</h1>
+        </div>
+        <div class="links">
+                <div><img v-bind:src="hola1"></div>
+                <div ><img v-bind:src="hola3"></div>
+                <div ><img v-bind:src="hola4"></div>
+        </div>
+        <div v-bind:class="pruebaclass">holaaa success</div>
+
+        <div v-bind:class="{activo:eactivo}">
+            <h1>{{titulo}}</h1>
+            
+        </div>
+        <button v-on:click= "activo:eactivo = false">Click!</button>
+        
+    </div>
+    <script>
+        var app = new Vue ({
+            el:"#app",
+            data:{
+                eactivo:true,
+                titulo:"holaaa probando 2",
+                hola:'https://es.vuejs.org/images/logo.png',
+                hola2:"https://www.google.com.bo",
+                hola1:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_oBaojFpScg2UxlMc8q7PGS4VcYUzG3swroUR5TjopTS2s_J1MA&s",
+                hola3:"data:image/jpeg;base64,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",
+                hola4:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSz0wYHUPdVtUtjDwbADkA9XJ-kRD6ki0EM0Xxtyn1Vgd1HyrQ-nA&s",
+                pruebaclass: "bg-success"
+                
+            }
+        })
+    </script>
+    <style>
+
+        .activo{
+            background-color: slateblue;
+        }
+        .prueba{
+            background-color: cyan;
+        }
+        .prueba2{
+            background-color: red;
+        }
+        .titulo h1{
+            color: seagreen;
+        }
+        .links {
+            display: grid;
+            grid-template-columns: auto auto auto;
+           
+        }
+        
+    </style>
+</body>
+</html>
