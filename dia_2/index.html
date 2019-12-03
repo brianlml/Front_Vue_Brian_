@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+
+</head>
+<body>
+        <div class="app">
+            <h1>{{mensaje}}</h1>
+            <h1>Directiva v-if</h1>
+            <p v-if="mostrar">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto neque quae dolores soluta sint facilis esse natus enim possimus! Eius incidunt vero nam accusantium voluptate qui, obcaecati nobis illum illo.</p>
+            <h1>Directiva v-show</h1>
+            <p v-show="mostrar">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum, eaque voluptatem. Odit vero doloremque ullam ipsa? Ducimus voluptates totam modi aspernatur nostrum et sunt error expedita. Cupiditate hic consequatur ad!</p>
+            <h1>Directiva v-for</h1>
+            <h1>Lista de Frutas</h1>
+                <ul>
+                    <li v-for="(f, index) of frutas" v-if="f.precio >=2 && f.precio <=6 ">{{index}}--{{f.nombre}}--{{f.precio}}--{{f.color}}</li>
+                </ul>
+            <h1>Directiva v-on // Eventos</h1>
+            <button v-on:click ="mostrar1 = true">Mostrar</button>
+            <p v-show="mostrar1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus quae sit veniam alias, autem quas totam eveniet modi. Nihil alias laudantium voluptas veritatis temporibus reprehenderit officia tenetur assumenda architecto consequuntur.</p>
+            <h1>Mostrar Lista Frutas</h1>
+            <button v-on:click=" mostrarFrutas = true" >Mostrar Frutas</button> 
+            <button v-on:click=" mostrarFrutas = false" >Ocultar Frutas</button>
+            <ul>
+                    <li v-show="mostrarFrutas" v-for=" f of frutas" v-if="f.nombre">{{f.nombre}}--{{f.precio}}--{{f.color}}</li>
+                </ul>
+        
+
+
+        </div>
+<script src="vue.js"></script>    
+</body>
+</html>
