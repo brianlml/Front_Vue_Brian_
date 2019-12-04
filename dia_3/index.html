@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+
+</head>
+<body>
+    <div id="app">
+            <button v-on:click=" oculto = true ">Listar</button>
+            <button v-on:click="oculto = false">Ocultar Lista</button>
+            <button v-on:click ="terror_oculto = true" >Terror</button>
+            <button v-on:click ="accion_oculto = true" >Accion</button>
+            <button v-on:click ="infantil_oculto = true">Infantil</button>
+            
+        <ul v-show="oculto">
+            <li v-for="l of lista_peliculas" >
+            <h1>{{l.titulo}}</h1><br>
+            <h4>{{l.descripcion}}</h5><br>
+            <h4>{{l.tipo}}</h4><br>
+            <h4>{{l.año}}</h4><br>
+            <img v-bind:src="l.portada">
+            
+            </li>
+            
+        </ul>
+        <div v-show="terror_oculto">
+                <ul >
+                        <li v-for="l of lista_peliculas" v-if="l.tipo == 'Terror'">
+                        <h1>{{l.titulo}}</h1><br>
+                        <h4>{{l.descripcion}}</h5><br>
+                        <h4>{{l.tipo}}</h4><br>
+                        <h4>{{l.año}}</h4><br>
+                        <img v-bind:src="l.portada">
+                        
+                        </li>
+                        
+                </ul>
+
+        </div>
+        <div v-show="accion_oculto">
+                <ul >
+                        <li v-for="l of lista_peliculas" v-if="l.tipo == 'Accion'">
+                        <h1>{{l.titulo}}</h1><br>
+                        <h4>{{l.descripcion}}</h5><br>
+                        <h4>{{l.tipo}}</h4><br>
+                        <h4>{{l.año}}</h4><br>
+                        <img v-bind:src="l.portada">
+                        
+                        </li>
+                        
+                </ul>
+
+        </div>
+        <div v-show="infantil_oculto">
+                <ul >
+                        <li v-for="l of lista_peliculas" v-if="l.tipo == 'Infantil'">
+                        <h1>{{l.titulo}}</h1><br>
+                        <h4>{{l.descripcion}}</h5><br>
+                        <h4>{{l.tipo}}</h4><br>
+                        <h4>{{l.año}}</h4><br>
+                        <img v-bind:src="l.portada">
+                        
+                        </li>
+                        
+                </ul>
+
+        </div>
+        
+        
+    </div>
+<script src="vue.js"></script>    
+</body>
+</html>
