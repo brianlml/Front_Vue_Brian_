@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h1>{{titulo}}</h1>
+        <input v-model="mensaje" type="text" name="" id="">
+
+        <input v-model="frutas" type="checkbox" name="" id="" value="manzana">
+        <label for="">manzana</label>
+ 
+        <input v-model="frutas"type="checkbox" name="" id="" value="uva">
+        <label for="">uva</label>
+
+        <input v-model="frutas" type="checkbox" name="" id="" value="banana">
+        <label for="">banana</label>
+        <br>
+        <select v-model="seleccionado" name="" id="">
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="D">D</option>
+            <option value="E">E</option>
+        </select>
+        <h1>{{saludar()}}</h1>
+        <h1>Es Par </h1>
+        <ul>
+            <li v-for="n of esPar()">{{n}}</li>
+        </ul>
+
+        <!--esPrimo-->
+
+    <script src="vue.js"></script>
+</body>
+</html>
