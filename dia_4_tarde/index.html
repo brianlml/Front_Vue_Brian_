@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Model y Methods</title>
+
+</head>
+<body>
+<div id="app">
+       <h1>{{mensaje}}</h1> 
+       <div  v-bind:class="{'bg-primary':activo, 'bg-danger':activo, 'bg-secondary':activo, 'bg-success':!activo}">
+        <h4>{{mensaje}}</h4>
+        <button v-on:click="activo =! activo">Click!</button> 
+       </div>
+       <br>
+       <div v-bind:class="fondo">
+           <p>Manejando v-model en el style directamente</p>
+        </div>
+            <input v-model="fondo">
+        <br>
+        <br>
+        <div >
+                <input v-model="texto" >
+                <p :model="texto">Text:---{{texto}}---</p>
+        </div>
+        <br>
+        <br>
+        <div>
+                <select v-model="escoge">
+                        <option v-for="p of opciones" v-bind:numero="p.numero">
+                            {{p.letra}}
+                        </option>
+                        
+                </select>
+                <p>escoger: {{escoge}}</p>
+                
+        </div>
+        <br>
+        
+        <br>
+        <div>
+                <select v-model="fondo_color">
+                        <option v-for="f of fondos" v-bind:color="f.color">
+                            {{f.fondo}}
+                        </option>
+                        
+                </select>
+                <h3 >fondo: {{fondo_color}}</h3>
+                
+        </div>
+
+                     
+</div>
+<style>
+   
+</style>
+
+<script>
+    var app = new Vue ({
+    el:"#app",
+    data:{
+        mensaje:"Model y Methods",
+        activo:true,
+        fondo:'bg-danger',
+        texto:'',
+        opciones:[  {letra: 'A', numero:'1'},
+                    {letra: 'B', numero:'2'},
+                    {letra: 'C', numero:'3'},
+                    {letra: 'D', numero:'4'}
+                ],
+        escoge: '',
+        fondo_color:'',
+        aux:false,
+        fondos:[
+                {fondo:'fondo1', color:'bg-success'},
+                {fondo:'fondo2', color:'bg-primary'},
+                {fondo:'fondo3', color: 'bg-danger'}
+        ]       
+        
+
+        
+    },
+    methods:{
+
+    }
+
+})
+</script>    
+</body>
+</html>
