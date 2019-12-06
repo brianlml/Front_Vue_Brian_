@@ -36,20 +36,28 @@
                         </option>
                         
                 </select>
+                <div> <p>escoger: {{escoge}}</p></div>
                 <p>escoger: {{escoge}}</p>
                 
+             
         </div>
+        
         <br>
         
         <br>
         <div>
-                <select v-model="fondo_color">
-                        <option v-for="f of fondos" v-bind:color="f.color">
-                            {{f.fondo}}
+                <select v-model="escoge">
+                        <option v-for="p of opciones" v-bind:value="p">
+                            {{p.numero}}
                         </option>
                         
                 </select>
-                <h3 >fondo: {{fondo_color}}</h3>
+                <span>
+                    <div v-bind:class="escoge.bg">-------{{escoge.texto}}</div>
+                    <img v-bind:src="escoge.imagen" alt="">
+                </span>
+                
+                
                 
         </div>
 
@@ -65,27 +73,21 @@
     data:{
         mensaje:"Model y Methods",
         activo:true,
-        fondo:'bg-danger',
+        color:false,
+        fondo:'',
         texto:'',
-        opciones:[  {letra: 'A', numero:'1'},
-                    {letra: 'B', numero:'2'},
-                    {letra: 'C', numero:'3'},
-                    {letra: 'D', numero:'4'}
+        opciones:[  {letra: 'A', numero:'1', bg:'bg-danger', imagen:"https://www.cinecalidad.is/wp-content/uploads/2019/12/estafadoras-de-wall-street.jpg"},
+                    {letra: 'B', numero:'2',bg:'bg-success'},
+                    {letra: 'C', numero:'3',bg:'bg-primary'}
+                   
                 ],
-        escoge: '',
+        escoge: {},
         fondo_color:'',
         aux:false,
-        fondos:[
-                {fondo:'fondo1', color:'bg-success'},
-                {fondo:'fondo2', color:'bg-primary'},
-                {fondo:'fondo3', color: 'bg-danger'}
-        ]       
+        
         
 
         
-    },
-    methods:{
-
     }
 
 })

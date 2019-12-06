@@ -13,8 +13,8 @@ new Vue ({
        agregarTarea(agregar_tareas){
            this.lista_tareas.push(agregar_tareas)
        },
-       borrarTarea(){
-           this.lista.tareas.pop()
+       borrarTarea(index){
+           this.lista_tareas.splice(index, 1 )
        }
        
        
