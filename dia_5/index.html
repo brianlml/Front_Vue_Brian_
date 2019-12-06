@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="estilos.css">
+    <title>Document_dia_5</title>
+</head>
+<body>
+    <div id="app">
+      <h1 v-bind:class="['color', 'fondo', 'alineacion', 'tamaño']">{{mensaje}}</h1>
+      <h1 v-bind:class="{'tamaño':estado}">{{mensaje}}</h1>
+    </div>
+    <script src="vue.js"></script>
+</body>
+</html>
