@@ -1,14 +1,25 @@
 new Vue ({
     el: "#app",
     data:{
-       mensaje:"Hola a todos!!!",
-       estado:true
+        agregar_tareas:'',
+        lista_tareas:[],
+        activo:false
+        
+       
         
         
     },
-    methods: {
-        
-        
+    methods:{
+       agregarTarea(agregar_tareas){
+           this.lista_tareas.push(agregar_tareas)
+       },
+       borrarTarea(){
+           this.lista.tareas.pop()
+       }
+       
+       
     }
+        
+    
 
 })

@@ -6,12 +6,23 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <link rel="stylesheet" href="estilos.css">
-    <title>Document_dia_5</title>
+    <title>Document_dia_5_Methods</title>
 </head>
 <body>
     <div id="app">
-      <h1 v-bind:class="['color', 'fondo', 'alineacion', 'tamaño']">{{mensaje}}</h1>
-      <h1 v-bind:class="{'tamaño':estado}">{{mensaje}}</h1>
+     <h1>Lista de Tareas</h1>
+     <input v-model= "agregar_tareas" type="text" placeholder="Ingrese tarea..." >
+     <button v-model= "agregar_tareas" v-on:click="agregarTarea(agregar_tareas)">Agregar</button>
+     <ul>
+         <li v-for="l of lista_tareas">
+             <h1 v-bind:class="{'tarea_hecha':activo}">{{l}}</h1>
+             <button v-on:click="activo = true">Hecho!</button>
+             <button  v-on:click="borrarTarea()">Borrar!</button>
+         </li>
+     </ul>
+
+
+
     </div>
     <script src="vue.js"></script>
 </body>
