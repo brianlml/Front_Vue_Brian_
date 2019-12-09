@@ -13,12 +13,13 @@
     <div id="app">
      <h1>Lista de Tareas</h1>
      <input v-model= "agregar_tareas" type="text" placeholder="Ingrese tarea..." >
-     <button v-model= "agregar_tareas" v-on:click="agregarTarea(agregar_tareas)" v-bind:class="'btn btn-info'">Agregar</button>
+     <button v-model= "agregar_tareas" v-on:click="agregarTarea()" v-bind:class="'btn btn-info'">Agregar</button>
      <ul>
          <li v-for="(l, index ) of lista_tareas">
-             <h1 v-bind:class="{'tarea_hecha':activo}">{{index}}---{{l}}</h1>
-             <button v-on:click="activo = true" :class="'btn btn-info'">Hecho!</button>
+             <h1 v-bind:class="{'tarea_hecha':l.estado}">{{l.tareas}}</h1>
+             <button v-on:click="l.estado =! l.estado" :class="'btn btn-info'">Hecho!</button>
              <button  v-on:click="borrarTarea(index)":class="'btn btn-info'" >Borrar!</button>
+             
          </li>
      </ul>
 
