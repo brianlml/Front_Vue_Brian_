@@ -13,15 +13,27 @@
     <div id="app" >
         <h1 style="text-align:center;">Lista de Frutas</h1>
         <br>
-            <ul v-for="l of frutas">
-                <li>{{l.nombre}}  {{l.cantidad}}
-                    <button   v-on:click="l.cantidad++">+</button>
-                    <button   v-on:click="l.cantidad--">-</button>
-                    
-                   
-                </li>          
+        <div v-bind:class="'container mt-3'">
+                <input  v-bind:class="'input-group'"v-model= "nuevaFruta" type="text" placeholder="Ingrese tarea..." >
+                <button v-model= "nuevaFruta" v-on:click="agregarFruta()" v-bind:class="'btn btn-dark'">Agregar</button>
+        </div>
+            <ul v-for="(l,index)  of frutas" v-bind:class="'list-group'">
+            <div v-bind:class="'container mt-3'">
+                <li v-bind:class="cambiarColor(l)" class="'list-group-item d-flex justify-content-between align-items-center'">
+                    {{l.nombre}}
+                    <span v-bind:class="'badge badge-pill'">{{l.cantidad}}</span>
+
+                    <div v-bind:class="'d-flex flex-row bg-secondary'"> 
+                            <button  v-bind:class="'btn btn-dark'" v-on:click="l.cantidad++">Add</button>
+                            <button  v-bind:class="'btn btn-dark'" v-on:click="l.cantidad--">-</button>
+                            <button  v-bind:class="'btn btn-dark'" v-on:click="borrarFruta(index)">Borrar</button>
+                    </div>
+                </li>         
+            </div>    
             </ul>
-            <button @click="">TOTAL--></button>
+            <br>
+            <div v-bind:class="'container mt-3'"><h4 v-bind:class="'btn btn-dark'">TOTAL: {{total()}}</h4> </div>
+           
             
        
            
