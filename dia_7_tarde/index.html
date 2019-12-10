@@ -11,11 +11,11 @@
 </head>
 <body>
 <div id="app">
-       <h1>{{mensaje}}</h1> 
-       {{incrementar}}
-       {{contador}}
-       <br>
-       <button @click="incrementar2(incrementar)">+</button>{{contador1}}
+      <h1>Tarea Computed</h1>
+      <input v-on:keyup.enter="activo=true"type="text" v-model="mostrar_nombre" >
+      <h1 v-if="activo">Mensaje:  {{mostrarNombre}}</h1>
+      
+     
                      
 </div>
 <style>
@@ -28,20 +28,22 @@
     data:{
         mensaje:"Computed",
         contador:0,
-        contador1: 0
+        contador1: 0,
+        mostrar_nombre:'',
+        activo:false
     },
     computed: {
-        incrementar(){
+       mostrarNombre(){
+           console.log(this.mostrar_nombre + "@gmail.com");
            
-            console.log(this.contador += 1);
-
-            
-        }
+           return this.mostrar_nombre + "@gmail.com"
+           
+           
+           
+       }
     },
     methods: {
-        incrementar2(){
-            console.log(this.contador1 ++);
-        }
+      
     },
 
 })
