@@ -14,7 +14,7 @@
         <h1 style="text-align:center;">Lista de Frutas</h1>
         <br>
         <div v-bind:class="'container mt-3'">
-                <input  v-bind:class="'input-group'"v-model= "nuevaFruta" type="text" placeholder="Ingrese tarea..." >
+                <input  v-bind:class="'input-group'"v-model= "nuevaFruta" type="text" placeholder="Ingrese una fruta..." v-on:keyup.enter="agregarFruta()">
                 <button v-model= "nuevaFruta" v-on:click="agregarFruta()" v-bind:class="'btn btn-dark'">Agregar</button>
         </div>
             <ul v-for="(l,index)  of frutas" v-bind:class="'list-group'">
