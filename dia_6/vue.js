@@ -14,14 +14,14 @@ new Vue({
         
     },
     methods: {
-        total(){
+        /*total(){
             auxiliar = 0 ;
             for(l of this.frutas){
                  auxiliar = auxiliar + l.cantidad;
 
             }
             return auxiliar
-        },
+        },*/
         agregarFruta(){
             if (this.nuevaFruta) {
              
@@ -53,7 +53,17 @@ new Vue({
             
             
         }
+    },
+    computed: {
+        total(){
+            auxiliar = 0 ;
+            for(l of this.frutas){
+                 auxiliar = auxiliar + l.cantidad;
+
+            }
+            return auxiliar
     }
+}
         
     
 
