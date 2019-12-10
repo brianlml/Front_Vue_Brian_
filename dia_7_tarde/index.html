@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Computed</title>
+
+</head>
+<body>
+<div id="app">
+       <h1>{{mensaje}}</h1> 
+       {{incrementar}}
+       {{contador}}
+       <br>
+       <button @click="incrementar2(incrementar)">+</button>{{contador1}}
+                     
+</div>
+<style>
+   
+</style>
+
+<script>
+    var app = new Vue ({
+    el:"#app",
+    data:{
+        mensaje:"Computed",
+        contador:0,
+        contador1: 0
+    },
+    computed: {
+        incrementar(){
+           
+            console.log(this.contador += 1);
+
+            
+        }
+    },
+    methods: {
+        incrementar2(){
+            console.log(this.contador1 ++);
+        }
+    },
+
+})
+</script>    
+</body>
+</html>
