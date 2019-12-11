@@ -26,7 +26,7 @@ var app = new Vue({
                     this.pantalla = this.resultado;
                     break;
                 case 'resta':
-                    this.resultado =this.umero1 - this.numero2;
+                    this.resultado =this.numero1 - this.numero2;
                     this.pantalla = this.resultado;
 					break;
 				case 'multiplicacion':
@@ -48,7 +48,7 @@ var app = new Vue({
         },
         sumar(){
             this.resultado = parseInt(this.numero1) + parseInt(this.numero2);
-            this.pantalla = resultado;
+            this.pantalla = this.resultado;
         },
         restar(){
             this.resultado = parseInt(this.numero1) - parseInt(this.numero2);
