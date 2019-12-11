@@ -14,31 +14,31 @@
            
         <table class="calculadora">
             <tr>
-                <td colspan="4"><input class="pantalla" id="lcd" ></input></td>
+                <td colspan="4"><input v-model="pantalla" class="pantalla" id="lcd" type="text"></input></td>
             </tr>
             <tr>
-                <td><button onclick ="mostrar(7)" id="siete">7</button></td>
-                <td><button onclick ="mostrar(8)" id="ocho">8</button></td>
-                <td><button onclick ="mostrar(9)" id="nueve">9</button></td>
-                <td><button onclick ="obtenerOperador('division')" id="division">/</button></td>
+                <td><button v-on:click ="mostrar(7)" id="siete">7</button></td>
+                <td><button v-on:click ="mostrar(8)" id="ocho">8</button></td>
+                <td><button v-on:click ="mostrar(9)" id="nueve">9</button></td>
+                <td><button v-on:click ="obtenerOperador('division')" id="division">/</button></td>
             </tr>
             <tr>
-                <td><button onclick ="mostrar(4)" id="cuatro">4</button></td>
-                <td><button onclick ="mostrar(5)" id="cinco">5</button></td>
-                <td><button onclick ="mostrar(6)" id="seis">6</button></td>
-                <td><button onclick ="obtenerOperador('multiplicacion')" id="multiplicacion">*</button></td>
+                <td><button v-on:click ="mostrar(4)" id="cuatro">4</button></td>
+                <td><button v-on:click ="mostrar(5)" id="cinco">5</button></td>
+                <td><button v-on:click ="mostrar(6)" id="seis">6</button></td>
+                <td><button v-on:click ="obtenerOperador('multiplicacion')" id="multiplicacion">*</button></td>
             </tr>
             <tr>
-                <td><button onclick ="mostrar(1)" id="uno">1</button></td>
-                <td><button onclick ="mostrar(2)" id="dos">2</button></td>
-                <td><button onclick ="mostrar(3)" id="tres">3</button></td>
-                <td><button onclick ="obtenerOperador('resta')" id="resta">-</button></td>
+                <td><button v-on:click ="mostrar(1)" id="uno">1</button></td>
+                <td><button v-on:click ="mostrar(2)" id="dos">2</button></td>
+                <td><button v-on:click ="mostrar(3)" id="tres">3</button></td>
+                <td><button v-on:click ="obtenerOperador('resta')" id="resta">-</button></td>
             </tr>
             <tr>
-                <td><button onclick ="calcular()" id="igual">=</button></td>
-                <td><button onclick ="borrarPantalla()" id="reset">C</button></td>
-                <td><button onclick ="mostrar(0)" id="cero">0</button></td>
-                <td><button onclick ="obtenerOperador('suma')" id="suma">+</button></td>
+                <td><button v-on:click ="calcular()" id="igual">=</button></td>
+                <td><button v-on:click ="borrarPantalla()" id="reset">C</button></td>
+                <td><button v-on:click ="mostrar(0)" id="cero">0</button></td>
+                <td><button v-on:click ="obtenerOperador('suma')" id="suma">+</button></td>
             </tr>
             </table>
 

@@ -1,4 +1,4 @@
-new Vue({
+var app = new Vue({
     el:"#app",
     data:{
         pantalla:'',
@@ -9,73 +9,61 @@ new Vue({
     },
     methods: {
         mostrar(valor) {
-            pantalla = pantalla + valor;
-            document.getElementById('lcd').value = pantalla;
+            this.pantalla = this.pantalla + valor;
+            //document.getElementById('lcd').value = pantalla;
         },
         obtenerOperador(operacion){
-            numero1 = document.getElementById('lcd').value;
-            operador = operacion;
-            document.getElementById('lcd').value = '';
-            pantalla = '';
-        },
-
-
-        mostrar(valor) {
-            pantalla = pantalla + valor;
-            document.getElementById('lcd').value = pantalla;
-        },
-        obtenerOperador(operacion){
-            numero1 = document.getElementById('lcd').value;
-            operador = operacion;
-            document.getElementById('lcd').value = '';
-            pantalla = '';
+            this.numero1 = this.pantalla;
+            this.operador = operacion;
+            //document.getElementById('lcd').value = '';
+            this.pantalla = '';
         },
         calcular(){
-            numero2 = document.getElementById('lcd').value;
-            switch (operador) {
+            this.numero2 = this.pantalla;
+            switch (this.operador) {
                 case 'suma':
-                    resultado = parseInt(numero1) + parseInt(numero2);
-                    document.getElementById('lcd').value = resultado;
+                    this.resultado = parseInt(this.numero1) + parseInt(this.numero2);
+                    this.pantalla = this.resultado;
                     break;
                 case 'resta':
-                    resultado =numero1 - numero2;
-                    document.getElementById('lcd').value = resultado;
+                    this.resultado =this.umero1 - this.numero2;
+                    this.pantalla = this.resultado;
 					break;
 				case 'multiplicacion':
-					multiplicacion();
+                    this.multiplicacion();
 					break;
 				case 'division':
-					division();
-					
+                    this.division();
+					break;
             }
         },
 
         borrarPantalla(){
-            document.getElementById('lcd').value = '';
-            numero2 = 0;
-            numero1 = 0;
-            resultado = 0;
-            operador = '';
-            pantalla = '';
+            this.pantalla = '';
+            this.numero2 = 0;
+            this.numero1 = 0;
+            this.resultado = 0;
+            this.operador = '';
+            this.pantalla = '';
         },
         sumar(){
-            resultado = parseInt(numero1) + parseInt(numero2);
-            document.getElementById('lcd').value = resultado;
+            this.resultado = parseInt(this.numero1) + parseInt(this.numero2);
+            this.pantalla = resultado;
         },
         restar(){
-            resultado = parseInt(numero1) - parseInt(numero2);
-            document.getElementById('lcd').value = resultado;
+            this.resultado = parseInt(this.numero1) - parseInt(this.numero2);
+            this.pantalla= this.resultado;
 		},
 		multiplicacion(){
-			resultado=numero1 * numero2;
-			document.getElementById(`lcd`).value = resultado;
+			this.resultado= this.numero1 * this.numero2;
+			this.pantalla= this.resultado;
 		},
 		division(valor){
-			if (numero2 == 0) {
+			if  (this.numero2 == 0) {
 				alert("NO EXISTE DIVISION POR CERO");
 			}else{
-				resultado=numero1 / numero2;
-				document.getElementById(`lcd`).value = resultado;
+				this.resultado = this.numero1 / this.numero2;
+				this.pantalla = this.resultado;
 			}	
 		}
 }
