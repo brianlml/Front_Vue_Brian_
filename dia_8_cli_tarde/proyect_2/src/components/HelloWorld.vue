@@ -5,27 +5,27 @@
     <div class="container">
             <div class="row">
                             <div class="col-3">
-                              <button class="btn btn-outline-success" v-on:click="aux =!aux">Listar</button>
+                              <button class="btn btn-outline-success" v-on:click="ver()">***</button>
                             </div>
                             <div class="col-3">
-                              <button class="btn btn-outline-success" v-on:click ="filtrar_Terror" >Terror</button>
+                              <button class="btn btn-outline-success"  v-on:click ="ver('Terror')" >Terror</button>
                             </div>  
                             <div class="col-3">
-                              <button class="btn btn-outline-success" v-on:click ="filtrar_Accion" >Accion</button>
+                              <button class="btn btn-outline-success" v-on:click ="ver('Accion')" >Accion</button>
                             </div>
                             <div class="col-3">
-                              <button class="btn btn-outline-success" v-on:click ="filtrar_Infantil">Infantil</button>
+                              <button class="btn btn-outline-success" v-on:click ="ver('Infantil')">Infantil</button>
                             </div>
             </div>
              
             
             
     </div>
-              
-    <div  v-if="aux" class="container">
+            
+    <div class="container">
                 <div class="row">
-                            <div v-for="(n,index) in lista_peliculas" v-bind:key="index" class="col-12 col-lg-4 col-md-6">
-                                      <div class="card" style="width: 18rem;">
+                            <div  v-for="(n,index) in filtrar" v-bind:key="index" class="col-12 col-lg-4 col-md-6">
+                                      <div   class="card" style="width: 18rem;">
                                                   <img v-bind:src="n.portada" class="card-img-top" alt="...">
                                                   <div class="card-body">
                                                         <h4 class="card-title">{{n.titulo}}</h4>
@@ -49,10 +49,9 @@ export default {
     return {
       titulo1: "Pelis_SIM",
       activo_titulo:true,
-      aux:false,
-      aux1:false,
-      aux2:false,
-      aux3:false,
+      aux:true,
+      
+      
       lista_peliculas:[{
         titulo:"It capítulo dos",
         descripcion:"Luego de 27 años de su primer encuentro con el aterrador Pennywise, los integrantes del Club de los Perdedores ya son adultos y viven lejos de su pueblo, hasta que una devastadora llamada los hace volver.",
@@ -131,30 +130,30 @@ export default {
         año:2013,
         portada:"https://www.cinecalidad.is/wp-content/uploads/2013/11/mi-villano-favorito-2.jpg"
 
-    }]
+    }],
+    pel:''
     }
   },
+
   computed:{
     filtrar(){
-      return this.lista_peliculas.filter()
-    },
-    filtrar_Accion(){
+      let pm = this.pel;
       return this.lista_peliculas.filter(function(peli){
-        return peli.tipo =='Accion'
-      })
-    },
-    filtrar_Terror(){
-      return this.lista_peliculas.filter(function(peli){
-        return peli.tipo =='Terror'
-      })
-    },
-    filtrar_Infantil(){
-      return this.lista_peliculas.filter(function(peli){
-        return peli.tipo =='Infantil'
+        return peli.tipo == pm;
       })
     }
+  },
+
+  methods: {
+    ver(valor){
+      this.pel = valor;  
+      this.aux = true;    
+      this.peli.tipo == valor;
+      
+      
   }
 
+}
 }
 
 </script>
