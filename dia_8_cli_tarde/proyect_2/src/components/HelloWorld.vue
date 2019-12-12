@@ -1,90 +1,53 @@
 <template>
-  <div class="hello">
-    <h1>{{mensaje}}</h1>
-    <button class="btn btn-success">Botoncito</button>
-
-      <div >
-                    <div>
-                        <button class="btn btn-success" v-on:click="aux =!aux">Listar</button>
-                        
-                        <button class="btn btn-success" v-on:click ="aux1 =!aux1" >Terror</button>
-                        <button class="btn btn-success" v-on:click ="aux2 =!aux2" >Accion</button>
-                        <button class="btn btn-success" v-on:click ="aux3 =!aux3">Infantil</button>
-                    </div>
-            
-                <div v-if="aux" >
-                    <ul >
-                      <div class='container1'>
-                        <li v-for="(l,index) in lista_peliculas" :key="index">
-                          <h1 v-bind:class="{fondotitulo:activo_titulo}">{{l.titulo}}</h1>
-                          <img v-bind:src="l.portada">
-                          <h4>{{l.descripcion}}</h4>
-                          <h4>{{l.tipo}}</h4>
-                          <h4>{{l.año}}</h4>
-                      
-                    
-                        </li>
-                        </div>
-                    </ul>
-                </div>
-              <div  v-if="aux1">
-                      <ul >
-                          <div class='container1'> 
-                              <li v-for="l in lista_peliculas" v-if="l.tipo == 'Terror'" :key="index">
-                              <h1>{{l.titulo}}</h1><br>
-                              <img v-bind:src="l.portada">
-                              <h4>{{l.descripcion}}</h4><br>
-                              <h4>{{l.tipo}}</h4><br>
-                              <h4>{{l.año}}</h4><br>
-                            </li> 
-                          </div>    
-                              
-                              
-                              
-                      </ul>
-              </div>
-              <div v-if="aux2">
-                      <ul >   
-                          <div class='container1'>
-                              <li v-for="(l, index) in lista_peliculas" v-if="l.tipo =='Accion'" :key="index">
-                              <h1>{{l.titulo}}</h1><br>
-                              <img v-bind:src="l.portada">
-                              <h4>{{l.descripcion}}</h4><br>
-                              <h4>{{l.tipo}}</h4><br>
-                              <h4>{{l.año}}</h4><br>
-                              </li>
-                              
-                          </div>    
-                              
-                              
-                      </ul>
-              </div>
-                  <div v-if="aux3">
-                          <ul >
-                              <div class='container'>
-                                  <li v-for="l in lista_peliculas" v-if="l.tipo == 'Infantil'" :key="index">
-                                    <h1>{{l.titulo}}</h1><br>
-                                    <img v-bind:src="l.portada">
-                                    <h4>{{l.descripcion}}</h4><br>
-                                    <h4>{{l.tipo}}</h4><br>
-                                    <h4>{{l.año}}</h4><br>
-                                  </li>
-                                </div>    
-                          
-                                  
-                          </ul>
-                  </div>
-      </div>  
+<div >
+    <h1>{{titulo1}}</h1>
     
-  </div>
-
+    <div class="container">
+            <div class="row">
+                            <div class="col-3">
+                              <button class="btn btn-outline-success" v-on:click="aux =!aux">Listar</button>
+                            </div>
+                            <div class="col-3">
+                              <button class="btn btn-outline-success" v-on:click ="filtrar_Terror" >Terror</button>
+                            </div>  
+                            <div class="col-3">
+                              <button class="btn btn-outline-success" v-on:click ="filtrar_Accion" >Accion</button>
+                            </div>
+                            <div class="col-3">
+                              <button class="btn btn-outline-success" v-on:click ="filtrar_Infantil">Infantil</button>
+                            </div>
+            </div>
+             
+            
+            
+    </div>
+              
+    <div  v-if="aux" class="container">
+                <div class="row">
+                            <div v-for="(n,index) in lista_peliculas" v-bind:key="index" class="col-12 col-lg-4 col-md-6">
+                                      <div class="card" style="width: 18rem;">
+                                                  <img v-bind:src="n.portada" class="card-img-top" alt="...">
+                                                  <div class="card-body">
+                                                        <h4 class="card-title">{{n.titulo}}</h4>
+                                                        <p class="card-text">{{n.descripcion}}</p>
+                                                        
+                                                  </div>
+                                      </div>             
+                              </div>
+                    
+                  </div>
+    </div> 
+    
+           
+  
+</div>
 </template>
 
 <script>
 export default {
   data(){
     return {
-      mensaje: "Hello World!!!",
+      titulo1: "Pelis_SIM",
       activo_titulo:true,
       aux:false,
       aux1:false,
@@ -169,6 +132,26 @@ export default {
         portada:"https://www.cinecalidad.is/wp-content/uploads/2013/11/mi-villano-favorito-2.jpg"
 
     }]
+    }
+  },
+  computed:{
+    filtrar(){
+      return this.lista_peliculas.filter()
+    },
+    filtrar_Accion(){
+      return this.lista_peliculas.filter(function(peli){
+        return peli.tipo =='Accion'
+      })
+    },
+    filtrar_Terror(){
+      return this.lista_peliculas.filter(function(peli){
+        return peli.tipo =='Terror'
+      })
+    },
+    filtrar_Infantil(){
+      return this.lista_peliculas.filter(function(peli){
+        return peli.tipo =='Infantil'
+      })
     }
   }
 
