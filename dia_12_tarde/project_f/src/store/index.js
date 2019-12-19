@@ -6,7 +6,7 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     count: 0,
-    telefonos: [{
+    lista_telefonos: [{
       imagen:"http://celularesbolivia.com/img/products/Huawei-P20.jpg",
       marca:"Huawei P20",
       descripcion:"Camara fotografica de 12MP, Pantalla de 1080x2244 pixels, 5.8, Procesador Octa-core 4x2.4GHz",

@@ -7,7 +7,7 @@
                LG y muchas otras.</p>
 </div>
 <div class="contenedor">
-  <div class="row" v-for="(t, index) of ordenarporPrecios" :key="index">
+  <div class="row" v-for="(t, index) of ordenarporPrecio" :key="index">
     <div class="col-lg-4">
       <div class="card" style="width: 18rem;">
   <img v-bind:src="t.imagen" class="card-img-top" alt="...">
