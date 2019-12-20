@@ -5,19 +5,25 @@
         <h1>{{contador}}</h1>
         <ul v-for="(t, index) in tareas" :key="index">
           <li >
-              {{t}}
+              {{t.nombre}}
               
           </li>
+          
         </ul>
 
         <h1>{{cantidad}}</h1>
+        <button @click= "aumentar">Incrementar</button>
+        
+        <p>{{buscar('Jugar')}}</p>
+
+        
         <component-c/>
   </div>
 </template>
 
 <script>
 import ComponentC from './C.vue'
-import {mapState,mapGetters} from 'vuex'
+import {mapState,mapGetters,mapMutations,mapActions} from 'vuex'
 
 export default {
     components:{
@@ -25,13 +31,21 @@ export default {
     },
     computed:{
        ...mapState(['mensaje','contador']),
-       ...mapGetters['cantidadTareas'],
+       ...mapGetters(['cantidadTareas','buscar']),
        tareas(){
          return this.$store.getters.tareasTerminadas
        },
        cantidad(){
          return this.$store.getters.cantidadTareas
        }
+    },
+    methods:{
+      ...mapMutations(['incrementar']),
+      //...mapGetters(['cantidadTareas','buscar'])
+      ...mapActions(['aumentar'])
+      //aumentar () {
+        //return this.$store.dispatch('aumentar')
+      //}
     }
 }
 </script>
