@@ -4,9 +4,10 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> |
       <router-link to="/NewView">RT</router-link> |
-      <router-link to="/User/1">USER</router-link> |
-      <router-link to="/User/2">USER</router-link> |
-       <router-link to="/User/3">USER</router-link>
+      <router-link to="/User/1">USER1</router-link> |
+      <router-link to="/User/2">USER2</router-link> |
+       <router-link to="/User/3">USER3</router-link> |
+       <router-link to='/Userslist'>USERS__LIST</router-link>
     </div>
     <router-view/>
   </div>
