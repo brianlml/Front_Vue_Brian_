@@ -1,19 +1,21 @@
 <template>
   <v-app>
     <v-content>
-      <HelloWorld/>
+      <Lista/>
+     
     </v-content>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
+import Lista from './components/Lista.vue'
+//import Form from './components/Form.vue'
 
 export default {
   name: 'App',
 
   components: {
-    HelloWorld,
+    Lista, //Form
   },
 
   data: () => ({
