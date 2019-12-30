@@ -1,0 +1,52 @@
+{
+  "tareas": [
+    {
+      "id": 1,
+      "title": "Instalar json-server",
+      "author": "Coria",
+      "description": "Instalar y configurar json"
+    },
+    {
+      "title": "Reinstalar cosas",
+      "author": "Gutierrez",
+      "description": "reinstalar versión 4.0",
+      "id": 2
+    },
+    {
+      "title": "Reinstalar cosas2222",
+      "author": "Gutierrez11111",
+      "description": "reinstalar versión 4.0.1",
+      "id": 3
+    },
+    {
+      "title": "Reinstalar cosas2222",
+      "author": "Gutierrez11111",
+      "description": "reinstalar versión 4.0.1",
+      "id": 4
+    },
+    {
+      "title": "danslekqwjelq",
+      "author": "qlijei1jqewiojqw",
+      "description": "iojwiojadijas",
+      "id": 5
+    },
+    {
+      "title": "danslekqwjelq",
+      "author": "qlijei1jqewiojqw",
+      "description": "iojwiojadijas",
+      "id": 6
+    },
+    {
+      "title": "oawiijrioqwjeoiqwjeioqwjeio",
+      "author": "iqwueioquweiouqwioeuqwioeuqwoi",
+      "description": "uqwioeuqwoieuqwoeuqoiweuoiweuoiqweu",
+      "id": 7
+    },
+    {
+      "title": "123123121231",
+      "author": "123123123",
+      "description": "123123123",
+      "id": 8
+    }
+  ]
+}
