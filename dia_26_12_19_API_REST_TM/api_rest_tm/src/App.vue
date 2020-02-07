@@ -12,17 +12,17 @@
 
 <script>
 import Lista from './components/Lista.vue'
-//import Form from './components/Form.vue'
+
 
 export default {
   name: 'App',
 
   components: {
-    Lista, //Form
+    Lista,
   },
 
   data: () => ({
-    //
+  
   }),
 };
 </script>

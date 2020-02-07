@@ -16,7 +16,7 @@
           :avatar="avatar"
           :rounded="rounded"
         >
-        <v-btn @click="getItems()">BUTTON</v-btn>
+          <v-btn @click="getItems()">BUTTON</v-btn>
           <v-subheader>Lista</v-subheader>
           <v-list-item-group v-model="item" color="primary">
             <v-list-item v-for="(i, index) in items" :key="index">
@@ -36,7 +36,7 @@
 </template>
 
 <script>
-import axios from 'axios'
+import axios from "axios";
 export default {
   data: () => ({
     item: 5,
@@ -52,12 +52,12 @@ export default {
     nav: false,
     avatar: true,
     rounded: false,
-    items:[]
-    
+    items: []
   }),
-  methods:{
-      getItems() {
-      axios.get("http://localhost:3000/items")
+  methods: {
+    getItems() {
+      axios
+        .get("http://localhost:3000/items")
         .then(respuesta => {
           console.log(respuesta.data);
           this.items = respuesta.data;
@@ -71,5 +71,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>

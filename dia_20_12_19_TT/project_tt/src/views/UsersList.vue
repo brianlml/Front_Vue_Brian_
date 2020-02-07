@@ -2,10 +2,10 @@
   <div>
 
      
-        <ul v-for="(u, index) in userslist" :key="index">
+        <ul v-for="(u, i) in userslist" :key="i">
             <li>
                 {{u.name}}
-                 <h1><router-link :to="{name: 'u', params: {id:u.id}}">Ver User </router-link></h1>
+                 <h1><router-link :to="{name: 'u', params: {id:u.id}}">Ver User {{u.name}}</router-link></h1>
             </li>
           
       </ul>

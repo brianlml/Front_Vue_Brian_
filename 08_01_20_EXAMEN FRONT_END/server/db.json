@@ -1,0 +1,19 @@
+{
+  "helados": [
+    {
+      "nombre": "TRAMONTANA",
+      "precio": "70",
+      "id": 1
+    },
+    {
+      "nombre": "FRUTOS DEL BOSQUE",
+      "precio": "50",
+      "id": 2
+    },
+    {
+      "nombre": "VAINILLA",
+      "precio": "40",
+      "id": 3
+    }
+  ]
+}

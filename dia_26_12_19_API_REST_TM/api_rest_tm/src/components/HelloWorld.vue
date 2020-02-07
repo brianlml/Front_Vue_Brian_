@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <h1>--- Container >>></h1>
+   
     <v-btn @click="getUsers">getUsers</v-btn>
     <v-list v-for="(u, index) in usuarios" :key="index">
       NOMBRE: {{u.name}}
